@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const RecommendWrapper = styled.div``
 
 export const RecommendSection = styled.div`
+  background-color: white;
   box-sizing: content-box;
   border: 1px solid #d3d3d3;
   width: 980px;
