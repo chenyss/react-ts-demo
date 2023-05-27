@@ -10,6 +10,7 @@ import { useAppDispatch } from '@/store'
 import { fetchRecommendDataAction } from './store/recommend'
 import TopBanner from './c-cpns/top-banner'
 import HotRecommend from './c-cpns/hot-recommend'
+import NewAlbum from './c-cpns/new-album'
 
 interface IProps {
   children?: ReactNode
@@ -28,6 +29,7 @@ const Recommend: FC<IProps> = () => {
       <RecommendSection className="wrap-v2">
         <RecommendLeft>
           <HotRecommend />
+          <NewAlbum />
         </RecommendLeft>
         <RecommendRight></RecommendRight>
       </RecommendSection>
