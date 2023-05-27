@@ -1,8 +1,8 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
-    node: true
+    node: true,
+    es2021: true
   },
   extends: [
     'eslint:recommended',
@@ -19,6 +19,6 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     '@typescript-eslint/no-var-requires': 'off',
-    'react/react-in-jsx-scope': 'off'
+    '@typescript-eslint/no-explicit-any': 'off'
   }
 }

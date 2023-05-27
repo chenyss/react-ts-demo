@@ -1,22 +1,17 @@
-import { Suspense } from 'react'
+import React, { Suspense } from 'react'
 import { useRoutes } from 'react-router-dom'
 import routes from './router'
-import { shallowEqualApp, useAppSelector } from './store'
+import AppFooter from './components/app-footer'
+import AppHeader from './components/app-header'
 
-const App = () => {
-  const { count, message } = useAppSelector(
-    (state) => ({
-      count: state.counter.count,
-      message: state.counter.message
-    }),
-    shallowEqualApp
-  )
+function App() {
   return (
     <div className="App">
-      {count}
+      <AppHeader />
       <Suspense fallback="">
         <div className="main">{useRoutes(routes)}</div>
       </Suspense>
+      <AppFooter />
     </div>
   )
 }
