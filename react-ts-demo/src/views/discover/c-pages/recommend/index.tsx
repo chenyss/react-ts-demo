@@ -1,6 +1,11 @@
 import React, { memo, useEffect } from 'react'
 import type { FC, ReactNode } from 'react'
-import { RecommendLeft, RecommendRight, RecommendWrapper } from './style'
+import {
+  RecommendLeft,
+  RecommendRight,
+  RecommendSection,
+  RecommendWrapper
+} from './style'
 import { useAppDispatch } from '@/store'
 import { fetchRecommendDataAction } from './store/recommend'
 import TopBanner from './c-cpns/top-banner'
@@ -20,10 +25,12 @@ const Recommend: FC<IProps> = () => {
   return (
     <RecommendWrapper>
       <TopBanner />
-      <RecommendLeft>
-        <HotRecommend />
-      </RecommendLeft>
-      <RecommendRight></RecommendRight>
+      <RecommendSection className="wrap-v2">
+        <RecommendLeft>
+          <HotRecommend />
+        </RecommendLeft>
+        <RecommendRight></RecommendRight>
+      </RecommendSection>
     </RecommendWrapper>
   )
 }
