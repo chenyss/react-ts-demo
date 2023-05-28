@@ -30,3 +30,13 @@ export function getPlayListDetail(id: number) {
     }
   })
 }
+
+export function getArtistList(cat: number, limit: number) {
+  return hyRequest.get({
+    url: '/artist/list',
+    params: {
+      cat,
+      limit
+    }
+  })
+}

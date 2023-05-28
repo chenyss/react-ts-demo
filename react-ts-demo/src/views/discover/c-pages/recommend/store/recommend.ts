@@ -1,4 +1,5 @@
 import {
+  getArtistList,
   getHotRecommend,
   getNewAlbum,
   getPlayListDetail,
@@ -49,18 +50,29 @@ export const fetchRecommendDataAction = createAsyncThunk(
   }
 )
 
+export const fetchSettleSinger = createAsyncThunk(
+  'settlesinger',
+  async (_, { dispatch }) => {
+    const res = await getArtistList(5001, 5)
+    // dispatch()
+    dispatch(changeSettleSingerAction(res.artists))
+  }
+)
+
 interface RecommendState {
   banners: any[]
   hotRecommends: any[]
   newAlbums: any[]
   rankings: any[]
+  settleSingers: any[]
 }
 
 const initialState: RecommendState = {
   banners: [],
   hotRecommends: [],
   newAlbums: [],
-  rankings: []
+  rankings: [],
+  settleSingers: []
 }
 
 const recommendSlice = createSlice({
@@ -78,6 +90,9 @@ const recommendSlice = createSlice({
     },
     changeRankingsAction(state, { payload }) {
       state.rankings = payload
+    },
+    changeSettleSingerAction(state, { payload }) {
+      state.settleSingers = payload
     }
   }
 })
@@ -86,6 +101,7 @@ export const {
   changeBannersAction,
   changeHotRecommendAction,
   changeNewAlbumsAction,
-  changeRankingsAction
+  changeRankingsAction,
+  changeSettleSingerAction
 } = recommendSlice.actions
 export default recommendSlice.reducer

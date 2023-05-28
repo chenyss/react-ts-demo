@@ -22,6 +22,26 @@ export const ItemWrapper = styled.div`
       background-position: 0 -570px;
       text-indent: -9999px;
     }
+
+    .btm {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      right: 22px;
+      height: 22px;
+      width: 22px;
+      cursor: pointer;
+    }
+
+    .play {
+      background-position: 0 0;
+    }
+
+    :hover {
+      .btm {
+        display: block;
+      }
+    }
   }
 
   .album-info {

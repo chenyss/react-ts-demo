@@ -17,7 +17,6 @@ const TopRanking: FC<IProps> = () => {
     }),
     shallowEqual
   )
-  console.log(rankings)
 
   return (
     <RankingWrapper>
