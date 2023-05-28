@@ -35,7 +35,11 @@ export const fetchRecommendDataAction = createAsyncThunk(
     let key: keyof typeof rankingMap
     for (key in rankingMap) {
       const id = rankingMap[key]
-      rankingPromises.push(getPlayListDetail(id))
+      rankingPromises.push(
+        getPlayListDetail(id).then((res: any) => {
+          return res.playlist
+        })
+      )
     }
     Promise.all(rankingPromises).then((res) => {
       dispatch(changeRankingsAction(res))
