@@ -7,7 +7,7 @@ interface IProps {
   children?: ReactNode
   title: string
   keywords?: string[]
-  morePath: string
+  morePath?: string
 }
 
 const SectionHeaderV1: FC<IProps> = (props: IProps) => {
@@ -27,11 +27,12 @@ const SectionHeaderV1: FC<IProps> = (props: IProps) => {
           })}
         </div>
       </div>
-
-      <div className="right">
-        <Link to={morePath}>更多</Link>
-        <i className="icon sprite_02"></i>
-      </div>
+      {morePath != undefined && (
+        <div className="right">
+          <Link to={morePath}>更多</Link>
+          <i className="icon sprite_02"></i>
+        </div>
+      )}
     </HeaderV1Wrapper>
   )
 }

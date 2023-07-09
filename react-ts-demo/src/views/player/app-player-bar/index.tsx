@@ -84,7 +84,6 @@ const AppPlayerBar: FC<IProps> = () => {
     // 4.匹配上对应的歌词的index
     if (lyricIndex === index || index === -1) return
     dispatch(changeLyricIndexAction(index))
-    console.log(currentTime)
 
     // 5.展示对应的歌词
     if (currentTime !== 0) {

@@ -15,6 +15,7 @@ import TopRanking from './c-cpns/top-ranking'
 import UserLogin from './c-cpns/user-login'
 import SettleSinger from './c-cpns/settle-singer'
 import HotAnchor from './c-cpns/hot-anchor'
+import ToTopBtn from '@/base-ui/toTopBtn'
 
 interface IProps {
   children?: ReactNode
@@ -36,6 +37,7 @@ const Recommend: FC<IProps> = () => {
           <HotRecommend />
           <NewAlbum />
           <TopRanking />
+          <ToTopBtn />
         </RecommendLeft>
         <RecommendRight>
           <UserLogin />
