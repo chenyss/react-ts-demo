@@ -57,4 +57,10 @@ export const ItemV1Wrapper = styled.div`
     color: #000;
     margin-top: 5px;
   }
+
+  .name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 `

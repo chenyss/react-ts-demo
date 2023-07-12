@@ -14,7 +14,7 @@ const SectionItemV1: FC<IProps> = (props: IProps) => {
   return (
     <ItemV1Wrapper>
       <div className="cover-top">
-        <img src={info.picUrl} alt="" />
+        <img src={info.picUrl ? info.picUrl : info.coverImgUrl} alt="" />
         <div className="sprite_cover cover ">
           <div className="sprite_cover info">
             <div className="info-left">
@@ -25,7 +25,7 @@ const SectionItemV1: FC<IProps> = (props: IProps) => {
           </div>
         </div>
       </div>
-      <div className="cover-bottom text-nowrap">{info.name}</div>
+      <div className="cover-bottom text-nowrap name">{info.name}</div>
     </ItemV1Wrapper>
   )
 }

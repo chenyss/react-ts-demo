@@ -5,12 +5,14 @@ import recommendReducer from '@/views/discover/c-pages/recommend/store/recommend
 import albumReducer from '@/views/discover/c-pages/album/store/album'
 import djradioReducer from '@/views/discover/c-pages/djradio/store/djradio'
 import playerReducer from '@/views/player/store/player'
+import songsSliceReducer from '@/views/discover/c-pages/songs/store/songs'
 const store = configureStore({
   reducer: {
     recommend: recommendReducer,
     player: playerReducer,
     album: albumReducer,
-    djradio: djradioReducer
+    djradio: djradioReducer,
+    songs: songsSliceReducer
   }
 })
 type GetStateFnType = typeof store.getState
