@@ -10,7 +10,7 @@ interface IProps {
   index: number
 }
 
-const Mine: FC<IProps> = (props) => {
+const ArtistItem: FC<IProps> = (props) => {
   const { info, index } = props
   return (
     <ItemWrapper>
@@ -27,4 +27,4 @@ const Mine: FC<IProps> = (props) => {
   )
 }
 
-export default memo(Mine)
+export default memo(ArtistItem)

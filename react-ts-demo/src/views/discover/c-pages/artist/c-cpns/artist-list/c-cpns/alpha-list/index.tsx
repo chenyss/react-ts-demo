@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react'
+import React, { FC, ReactNode, memo, useEffect } from 'react'
 import classNames from 'classnames'
 
 import { singerAlphas } from '@/utils/handle-data'
@@ -7,7 +7,11 @@ import { useAppDispatch, useAppSelector } from '@/store'
 import { shallowEqual } from 'react-redux'
 import { changeInitialAction } from '../../../../store/artist'
 
-export default memo(function HYAlphaList() {
+interface IProps {
+  children?: ReactNode
+}
+
+const ArtistItem: FC<IProps> = () => {
   const dispatch = useAppDispatch()
   const { currentType, currentArea, initial } = useAppSelector(
     (state) => ({
@@ -46,4 +50,6 @@ export default memo(function HYAlphaList() {
         })}
     </AlphaListWrapper>
   )
-})
+}
+
+export default memo(ArtistItem)
